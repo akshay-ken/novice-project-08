@@ -22,3 +22,22 @@
   --color-Discount-Text: hsl(15, 100%, 70%);
   --color-CTA-Text: hsl(226, 100%, 87%);
 }
+
+/* styles.css */
+
+/* For Webkit browsers (Chrome, Safari) */
+#steps-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background: hsl(174, 86%, 45%); /* Change the background color */
+  cursor: pointer;
+  /* Add an image */
+  background-image: url("./assets//images/icon-slider.svg");
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0px 20px 60px hsl(174, 86%, 45%);
+}
