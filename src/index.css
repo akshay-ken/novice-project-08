@@ -3,7 +3,7 @@
 
 @layer base {
   body {
-    @apply bg-Main-Background font-one bg-[url('./assets/images/bg-pattern.svg')] bg-no-repeat;
+    @apply bg-Main-Background font-one bg-[url('./assets/images/bg-pattern.svg')] bg-no-repeat md:bg-contain;
   }
 }
 
