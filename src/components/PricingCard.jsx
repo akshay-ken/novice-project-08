@@ -29,29 +29,33 @@ export function PricingCard() {
   }
   return (
     <section className="w-full md:w-[50%] bg-white flex flex-col items-center justify-center mt-8 p-4">
-      <p className=" uppercase text-base font-bold text-Text ">
-        {currentPageview} pageviews
-      </p>
-      {/* Slider */}
-
-      <input
-        id="steps-range"
-        type="range"
-        onChange={handleValueChange}
-        min={1}
-        max={100}
-        value={sliderValue}
-        step={1}
-        style={{
-          backgroundImage: `linear-gradient(90deg, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ${sliderValue}%, hsl(224, 65%, 95%) ${sliderValue}%, hsl(224, 65%, 95%) 100%)`,
-        }}
-        className={"w-full my-12 h-3 rounded-lg appearance-none cursor-pointer"}
-      />
-      <div className="flex flex-row justify-center gap-x-4 items-center">
-        <p className="text-5xl font-extrabold text-CTA-Background">
-          ${toggleSwtich ? curretnPrice * 0.75 : curretnPrice}.00{" "}
+      <div className="md:w-full contents md:flex md:flex-row md:flex-wrap md:justify-around  md:mt-6 md:items-center">
+        <p className=" uppercase md:-order-3 text-base    font-bold text-Text ">
+          {currentPageview} pageviews
         </p>
-        <p className="text-xl font-semibold text-Text mt-1">/ month</p>
+        {/* Slider */}
+
+        <input
+          id="steps-range"
+          type="range"
+          onChange={handleValueChange}
+          min={1}
+          max={100}
+          value={sliderValue}
+          step={1}
+          style={{
+            backgroundImage: `linear-gradient(90deg, hsl(174, 77%, 80%) 0%, hsl(174, 77%, 80%) ${sliderValue}%, hsl(224, 65%, 95%) ${sliderValue}%, hsl(224, 65%, 95%) 100%)`,
+          }}
+          className={
+            "w-full my-12 h-3 rounded-lg appearance-none md:-order-1 cursor-pointer"
+          }
+        />
+        <div className="flex flex-row justify-center   md:-order-2 md:gap-x-2 gap-x-4 items-center">
+          <p className="text-5xl font-extrabold text-CTA-Background">
+            ${toggleSwtich ? curretnPrice * 0.75 : curretnPrice}.00{" "}
+          </p>
+          <p className="text-xl font-semibold text-Text mt-1">/ month</p>
+        </div>
       </div>
       {/* toggle swtich */}
       <div className="flex gap-x-2 flex-row items-center justify-center text-base font-semibold text-Text mt-6 w-full">
@@ -70,8 +74,11 @@ export function PricingCard() {
           <div className="bg-white absolute top-1 left-1 peer-checked:translate-x-8 transition-all w-5 h-5 rounded-full"></div>
         </label>
         <p>Yearly Billing</p>
-        <p className="bg-Discount-Text/30 px-1 rounded-full text-Discount-Text">
+        <p className="bg-Discount-Text/30 px-1 md:hidden rounded-full text-Discount-Text">
           -25%
+        </p>
+        <p className="bg-Discount-Text/30 px-2 hidden md:block rounded-full text-Discount-Text">
+          25% discount
         </p>
       </div>
       <div className="w-[105%] h-1 bg-Empty-Slider-Bar my-6 -mx-4"></div>
