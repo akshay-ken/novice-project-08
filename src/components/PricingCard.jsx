@@ -11,6 +11,9 @@ const pricingDetails = [
 export function PricingCard() {
   const [sliderValue, setSliderValue] = useState(1);
   let currentPriceIndex = 0;
+  let [currentPageview, setCurrentPageview] = useState(
+    pricingDetails[0].pageviews
+  );
   const [curretnPrice, setCurrentPrice] = useState(pricingDetails[0].price);
   const [toggleSwtich, setToggleSwitch] = useState(false);
 
@@ -21,12 +24,13 @@ export function PricingCard() {
   function handleValueChange(event) {
     setSliderValue(event.target.value);
     currentPriceIndex = Math.ceil(sliderValue / 20) - 1;
+    setCurrentPageview(pricingDetails[currentPriceIndex].pageviews);
     setCurrentPrice(pricingDetails[currentPriceIndex].price);
   }
   return (
     <section className="w-full md:w-[50%] bg-white flex flex-col items-center justify-center mt-8 p-4">
       <p className=" uppercase text-base font-bold text-Text ">
-        100k Pageviews
+        {currentPageview} pageviews
       </p>
       {/* Slider */}
 
@@ -70,6 +74,16 @@ export function PricingCard() {
           -25%
         </p>
       </div>
+      <div className="w-[105%] h-1 bg-Empty-Slider-Bar my-6 -mx-4"></div>
+
+      <ul className="list-image-[url('./assets/images/icon-check.svg')] flex flex-col  gap-y-4 items-center h-[140px] w-[240px] text-base font-bold text-Text">
+        <li>Unlimited websites</li>
+        <li>100% data ownership</li>
+        <li>Email reports</li>
+      </ul>
+      <button className="text-base font-extrabold bg-CTA-Background py-2 px-8 rounded-full text-CTA-Text">
+        Start My Trial
+      </button>
     </section>
   );
 }
