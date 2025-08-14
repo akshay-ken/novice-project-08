@@ -11,8 +11,12 @@ const pricingDetails = [
 export function PricingCard() {
   const [sliderValue, setSliderValue] = useState(1);
   let currentPriceIndex = 0;
-  const currentData = pricingDetails[currentPriceIndex];
   const [curretnPrice, setCurrentPrice] = useState(pricingDetails[0].price);
+  const [toggleSwtich, setToggleSwitch] = useState(false);
+
+  function handleToggle() {
+    setToggleSwitch((prev) => !prev);
+  }
 
   function handleValueChange(event) {
     setSliderValue(event.target.value);
@@ -41,9 +45,30 @@ export function PricingCard() {
       />
       <div className="flex flex-row justify-center gap-x-4 items-center">
         <p className="text-5xl font-extrabold text-CTA-Background">
-          ${curretnPrice}.00{" "}
+          ${toggleSwtich ? curretnPrice * 0.75 : curretnPrice}.00{" "}
         </p>
         <p className="text-xl font-semibold text-Text mt-1">/ month</p>
+      </div>
+      {/* toggle swtich */}
+      <div className="flex gap-x-2 flex-row items-center justify-center text-base font-semibold text-Text mt-6 w-full">
+        <p className="">Monthly Billing</p>
+        <label
+          className={` w-15 relative  rounded-full h-7 ${
+            toggleSwtich ? "bg-Slider-Backround" : "bg-CTA-Text"
+          }`}
+        >
+          <input
+            type="checkbox"
+            className="sr-only peer"
+            checked={toggleSwtich}
+            onChange={handleToggle}
+          />
+          <div className="bg-white absolute top-1 left-1 peer-checked:translate-x-8 transition-all w-5 h-5 rounded-full"></div>
+        </label>
+        <p>Yearly Billing</p>
+        <p className="bg-Discount-Text/30 px-1 rounded-full text-Discount-Text">
+          -25%
+        </p>
       </div>
     </section>
   );
