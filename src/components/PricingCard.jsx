@@ -82,7 +82,7 @@ export function PricingCard() {
         </p>
       </div>
       <div className="w-[105%] h-1 bg-Empty-Slider-Bar my-6 -mx-4"></div>
-      <div className=" contents md:flex md:flex-row md:flex-wrap md:justify-around md:w-full ">
+      <div className=" contents md:flex md:justify-around md:w-full ">
         <ul className="list-image-[url('./assets/images/icon-check.svg')] flex flex-col md:items-start md:justify-center gap-y-4 items-center h-[140px] w-[240px] text-base font-bold text-Text">
           <li>Unlimited websites</li>
           <li>100% data ownership</li>
