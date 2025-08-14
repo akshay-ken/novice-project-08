@@ -82,15 +82,16 @@ export function PricingCard() {
         </p>
       </div>
       <div className="w-[105%] h-1 bg-Empty-Slider-Bar my-6 -mx-4"></div>
-
-      <ul className="list-image-[url('./assets/images/icon-check.svg')] flex flex-col  gap-y-4 items-center h-[140px] w-[240px] text-base font-bold text-Text">
-        <li>Unlimited websites</li>
-        <li>100% data ownership</li>
-        <li>Email reports</li>
-      </ul>
-      <button className="text-base font-extrabold bg-CTA-Background py-2 px-8 rounded-full text-CTA-Text">
-        Start My Trial
-      </button>
+      <div className=" contents md:flex md:flex-row md:flex-wrap md:justify-around md:w-full ">
+        <ul className="list-image-[url('./assets/images/icon-check.svg')] flex flex-col md:items-start md:justify-center gap-y-4 items-center h-[140px] w-[240px] text-base font-bold text-Text">
+          <li>Unlimited websites</li>
+          <li>100% data ownership</li>
+          <li>Email reports</li>
+        </ul>
+        <button className="text-base font-extrabold bg-CTA-Background py-2 px-8 md:h-fit md:self-center rounded-full text-CTA-Text">
+          Start My Trial
+        </button>
+      </div>
     </section>
   );
 }
